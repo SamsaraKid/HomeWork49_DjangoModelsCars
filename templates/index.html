@@ -6,19 +6,26 @@
 </head>
 <body>
 
-<form action="add1/" method="POST">
+<form action="add/" method="POST">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="добавить">
 </form>
 
 <table>
+    <tr>
+        <th>ID</th>
+        <th>Марка</th>
+        <th>Производитель</th>
+        <th>Год</th>
+        <th>Номер</th>
+    </tr>
     {% for car in database %}
         <tr>
-            {% for d in car.values %}
-                <td>{{ d }}</td>
+            {% for data in car %}
+                <td>{{ data }}</td>
             {% endfor %}
-{#            <td><a href="{% url 'del1' car.id %}"><button>удалить</button></a></td>#}
+            <td><a href="{% url 'delete' car.0 %}"><button>удалить</button></a></td>
         </tr>
     {% endfor %}
 </table>

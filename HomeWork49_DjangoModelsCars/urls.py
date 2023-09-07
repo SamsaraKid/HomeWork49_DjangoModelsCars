@@ -21,6 +21,6 @@ from cars import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('add1/', views.add1, name='add1'),
-
+    path('add/', views.add, name='add'),
+    path('delete/<int:id>', views.delete, name='delete'),
 ]

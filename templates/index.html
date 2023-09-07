@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>База автомобилей</title>
+</head>
+<body>
+
+<form action="add1/" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="добавить">
+</form>
+
+<table>
+    {% for car in database %}
+        <tr>
+            {% for d in car.values %}
+                <td>{{ d }}</td>
+            {% endfor %}
+{#            <td><a href="{% url 'del1' car.id %}"><button>удалить</button></a></td>#}
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

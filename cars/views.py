@@ -12,7 +12,6 @@ def index(req):
 def add(req):
     if req.POST:
         car = Car()
-        print(Car.objects.values_list())
         car.mark = req.POST.get('mark')
         car.producer = req.POST.get('producer')
         car.year = req.POST.get('year')

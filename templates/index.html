@@ -1,34 +1,41 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>База автомобилей</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
 
-<form action="add/" method="POST">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="добавить">
-</form>
+<div class="wrap">
+    <form action="add/" method="POST">
+        {% csrf_token %}
+        <table>{{ form }}</table>
+        <input type="submit" value="добавить">
+    </form>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Марка</th>
-        <th>Производитель</th>
-        <th>Год</th>
-        <th>Номер</th>
-    </tr>
-    {% for car in database %}
+    <table class="db-table">
         <tr>
-            {% for data in car %}
-                <td>{{ data }}</td>
-            {% endfor %}
-            <td><a href="{% url 'delete' car.0 %}"><button>удалить</button></a></td>
+            <th>ID</th>
+            <th>Марка</th>
+            <th>Производитель</th>
+            <th>Год</th>
+            <th>Номер</th>
+            <th>Удаление</th>
         </tr>
-    {% endfor %}
-</table>
+        {% for car in database %}
+            <tr>
+                {% for data in car %}
+                    <td>{{ data }}</td>
+                {% endfor %}
+                <td><a href="{% url 'delete' car.0 %}">
+                    <button>удалить</button>
+                </a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
 
 </body>
 </html>

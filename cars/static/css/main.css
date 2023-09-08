@@ -1,0 +1,68 @@
+body{
+    font-family: "Ink Free";
+    background-color: cadetblue;
+    box-sizing: border-box;
+}
+
+form{
+    width: 770px;
+    margin: auto;
+    border: 5px solid sandybrown;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+form table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+form th{
+    width: 15%;
+    text-align: right;
+    padding-right: 10px;
+}
+
+form td{
+    width: 85%;
+    padding: 5px 0;
+}
+
+input{
+    width: 98.5%;
+    text-align: center;
+    border-radius: 0;
+}
+
+button{
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+input[type=submit]{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.wrap{
+    width: max-content;
+    margin: auto;
+}
+
+.db-table{
+	width: 800px;
+	border-spacing: 10px;
+	border: 5px solid sandybrown;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.db-table td{
+    border: skyblue solid 1px;
+}
+
+.db-table th{
+    border: slateblue solid 3px;
+}
